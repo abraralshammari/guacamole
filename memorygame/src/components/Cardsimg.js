@@ -10,17 +10,21 @@ width: 150px;
   margin: 20px;
   border-style: double;
   border-radius: 50px;
+ 
+
 
 `;
 
 const Cardsimg = (props) => {
-  //  const [isFlipped, setIsFlipped] = useState(false);
-  //  const handleClick = () => {
-  //    setIsFlipped(!isFlipped);
-  //  }
+   const [isFlipped, setIsFlipped] = useState(false);
+   const handleClick = () => {
+     setIsFlipped(!isFlipped);
+   }
   
   return (
-    <Flippy>
+    <Flippy 
+    style={{ width: '250px', height: '250px', display:'inline-block' }} /// these are optional style, it is not necessary
+  >
     <FrontSide>
       <ImgStyle 
       src={props.img.backimg}
