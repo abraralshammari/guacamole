@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Images from "../Images";
+import Flippy, {FrontSide,BackSide} from "react-flippy";
+
 
 const ImgStyle = styled.img`
 width: 150px;
@@ -12,11 +14,27 @@ width: 150px;
 `;
 
 const Cardsimg = (props) => {
-   return (
-       <ImgStyle
+  //  const [isFlipped, setIsFlipped] = useState(false);
+  //  const handleClick = () => {
+  //    setIsFlipped(!isFlipped);
+  //  }
+  
+  return (
+    <Flippy>
+    <FrontSide>
+      <ImgStyle 
+      src={props.img.backimg}
+      />
+    </FrontSide>
+    <BackSide>
+    <ImgStyle
         src={props.img.image} 
         alt={props.img.altt}
        />
+    </BackSide>
+  </Flippy>
+       
+ 
    ) 
 }
 
